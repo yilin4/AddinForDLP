@@ -9,19 +9,20 @@ Office.onReady(() => {
   // If needed, Office.js is ready to be called
 });
 
-async function paragraphChanged(event: Word.ParagraphChangedEventArgs) {
-  await Word.run(async (context) => {
-    const paragraph = context.document.body.insertParagraph(
-     "${event.type} event detected.",
-      Word.InsertLocation.end
-    );
-    await context.sync();
-  });
-}
+// async function paragraphChanged(event: Word.ParagraphChangedEventArgs) {
+//   await Word.run(async (context) => {
+//     const paragraph = context.document.body.insertParagraph(
+//      "event detected.",
+//       Word.InsertLocation.end
+//     );
+//     await context.sync();
+//   });
+// }
 
 async function onParagraphChanged(event) {
   Word.run(async (context) => {
-    let eventContext = context.document.onParagraphChanged.add(paragraphChanged);
+    // let eventContext = context.document.onParagraphChanged.add(paragraphChanged);
+    const paragraph = context.document.body.insertParagraph("Hello", Word.InsertLocation.end);
     await context.sync();
   });
 
