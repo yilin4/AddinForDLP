@@ -16,6 +16,7 @@ async function changeHeader(event) {
       {
         body.insertParagraph("paragraph: " + i, "End");
       }
+    await context.sync();
     
     // const body = context.document.body;
     // body.load("text");
