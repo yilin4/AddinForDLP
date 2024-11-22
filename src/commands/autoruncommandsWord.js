@@ -9,7 +9,7 @@ Office.onReady(() => {
   // If needed, Office.js is ready to be called
 });
 
-async function onParagraphChanged(event) {
+async function changeHeader(event) {
   Word.run(async (context) => {
     const body = context.document.body;
     body.load("text");
@@ -53,4 +53,4 @@ const g = getGlobal();
 
 // The add-in command functions need to be available in global scope
 
-Office.actions.associate("onParagraphChanged", onParagraphChanged);
+Office.actions.associate("changeHeader", changeHeader);
