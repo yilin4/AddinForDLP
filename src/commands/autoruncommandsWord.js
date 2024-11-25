@@ -17,20 +17,26 @@ async function changeHeader(event) {
     if (body.text.length == 0)
     {
       const header = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.primary);
+      const firstPageHeader = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.firstPage);
       header.clear();
+      firstPageHeader.clear();
       header.insertParagraph("Public - The data is for the public and shareable externally", "Start");
-      const font = header.font;
-      font.color = "#07641d";
+      firstPageHeader.insertParagraph("Public - The data is for the public and shareable externally", "Start");
+      header.font.color = "#07641d";
+      firstPageHeader.font.color = "#07641d";
 
       await context.sync();
     }
     else
     {
       const header = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.primary);
+      const firstPageHeader = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.firstPage);
       header.clear();
+      firstPageHeader.clear();
       header.insertParagraph("High Confidential - The data must be secret or in some way highly critical", "Start");
-      const font = header.font;
-      font.color = "#f8334d";
+      firstPageHeader.insertParagraph("High Confidential - The data must be secret or in some way highly critical", "Start");
+      header.font.color = "#f8334d";
+      firstPageHeader.font.color = "#f8334d";
       await context.sync();
     }
   });
