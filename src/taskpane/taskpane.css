@@ -66,7 +66,9 @@
  }
  
 .ms-Button.ms-Button--hero .ms-Button-label {
-  color: #0078d7;
+  color: #000000;
+    font-size: 32px;
+    font-weight: 800;
 }
 
 .ms-Button.ms-Button--hero:hover .ms-Button-label,
@@ -77,4 +79,19 @@
 
 b {
     font-weight: bold;
+}
+.ms-font-nb {
+    color: #737173;
+}
+.ms-font-p {
+    color: #07641d;
+}
+.ms-font-g {
+    color: #0177d3;
+}
+.ms-font-c {
+    color: #ff5c3a;
+}
+.ms-font-hc {
+    color: #f8334d;
 }

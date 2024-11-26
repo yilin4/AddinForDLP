@@ -85,7 +85,10 @@ export async function changeToHighConfidentialLevel() {
     header.clear();
     firstPageHeader.clear();
     header.insertParagraph("High Confidential - The data must be secret or in some way highly critical", "Start");
-    firstPageHeader.insertParagraph("High Confidential - The data must be secret or in some way highly critical", "Start");
+    firstPageHeader.insertParagraph(
+      "High Confidential - The data must be secret or in some way highly critical",
+      "Start"
+    );
     header.font.color = "#f8334d";
     firstPageHeader.font.color = "#f8334d";
 
