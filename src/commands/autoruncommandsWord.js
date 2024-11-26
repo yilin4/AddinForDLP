@@ -12,7 +12,7 @@ Office.onReady(() => {
 async function changeHeader(event) {
   Word.run(async (context) => {
     const body = context.document.body;
-    for (let i = 0; i < 10; i++)
+    for (let i = 0; i < 50; i++)
       {
         body.insertParagraph("p: " + i, "End");
       }
