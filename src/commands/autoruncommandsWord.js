@@ -45,7 +45,7 @@ async function changeHeader(event) {
   event.completed();
 }
 
-async function paragraphChanged(event: Word.ParagraphChangedEventArgs) {
+async function paragraphChanged() {
   await Word.run(async (context) => {
     const results = context.document.body.search("110");
     results.load("length");
