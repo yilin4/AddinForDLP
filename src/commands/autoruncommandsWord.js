@@ -15,11 +15,8 @@ async function changeHeader(event) {
     for (let i = 0; i < 50; i++)
       {
         body.insertParagraph("p: " + i, "End");
-        if ((i + 1) % 5 == 0)
-        {
-          await context.sync();
-        }
       }
+    await context.sync();
     // const body = context.document.body;
     // body.load("text");
     // await context.sync();
