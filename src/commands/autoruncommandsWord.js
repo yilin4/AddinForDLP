@@ -12,39 +12,33 @@ Office.onReady(() => {
 async function changeHeader(event) {
   Word.run(async (context) => {
     const body = context.document.body;
-    for (let i = 0; i < 50; i++)
-      {
-        body.insertParagraph("p: " + i, "End");
-      }
+    body.load("text");
     await context.sync();
-    // const body = context.document.body;
-    // body.load("text");
-    // await context.sync();
-    // if (body.text.length == 0)
-    // {
-    //   const header = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.primary);
-    //   const firstPageHeader = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.firstPage);
-    //   header.clear();
-    //   firstPageHeader.clear();
-    //   header.insertParagraph("Public - The data is for the public and shareable externally", "Start");
-    //   firstPageHeader.insertParagraph("Public - The data is for the public and shareable externally", "Start");
-    //   header.font.color = "#07641d";
-    //   firstPageHeader.font.color = "#07641d";
+    if (body.text.length == 0)
+    {
+      const header = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.primary);
+      const firstPageHeader = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.firstPage);
+      header.clear();
+      firstPageHeader.clear();
+      header.insertParagraph("Public - The data is for the public and shareable externally", "Start");
+      firstPageHeader.insertParagraph("Public - The data is for the public and shareable externally", "Start");
+      header.font.color = "#07641d";
+      firstPageHeader.font.color = "#07641d";
 
-    //   await context.sync();
-    // }
-    // else
-    // {
-    //   const header = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.primary);
-    //   const firstPageHeader = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.firstPage);
-    //   header.clear();
-    //   firstPageHeader.clear();
-    //   header.insertParagraph("High Confidential - The data must be secret or in some way highly critical", "Start");
-    //   firstPageHeader.insertParagraph("High Confidential - The data must be secret or in some way highly critical", "Start");
-    //   header.font.color = "#f8334d";
-    //   firstPageHeader.font.color = "#f8334d";
-    //   await context.sync();
-    // }
+      await context.sync();
+    }
+    else
+    {
+      const header = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.primary);
+      const firstPageHeader = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.firstPage);
+      header.clear();
+      firstPageHeader.clear();
+      header.insertParagraph("High Confidential - The data must be secret or in some way highly critical", "Start");
+      firstPageHeader.insertParagraph("High Confidential - The data must be secret or in some way highly critical", "Start");
+      header.font.color = "#f8334d";
+      firstPageHeader.font.color = "#f8334d";
+      await context.sync();
+    }
   });
 
   // Calling event.completed is required. event.completed lets the platform know that processing has completed.
