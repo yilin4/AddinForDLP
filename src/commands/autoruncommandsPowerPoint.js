@@ -9,21 +9,31 @@ Office.onReady(() => {
   // If needed, Office.js is ready to be called
 });
 
-function insertImage() {
-  Office.context.document.setSelectedDataAsync(
-    getImageAsBase64String(),
-    {
-      coercionType: Office.CoercionType.XmlSvg,
-      imageLeft: 50,
-      imageTop: 50,
-      imageWidth: 400
-    },
-    function(asyncResult) {
-      if (asyncResult.status === Office.AsyncResultStatus.Failed) {
-        console.error(asyncResult.error.message);
-      }
-    }
-  );
+async function insertImage(event) {
+  try {
+    await PowerPoint.run(function (context) {
+      Office.context.document.setSelectedDataAsync(
+        getImageAsBase64String(),
+        {
+          coercionType: Office.CoercionType.XmlSvg,
+          imageLeft: 50,
+          imageTop: 50,
+          imageWidth: 400
+        },
+        function(asyncResult) {
+          if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+            console.error(asyncResult.error.message);
+          }
+        }
+      );
+    });
+  } catch (error) {
+    // Note: In a production add-in, notify the user through your add-in's UI.
+    //console.error(error);
+  }
+
+  // Calling event.completed is required. event.completed lets the platform know that processing has completed.
+  event.completed();
 }
 
 function getImageAsBase64String() {

@@ -15,6 +15,7 @@
   <Hosts>
     <Host Name="Document"/>
     <Host Name="Workbook"/>
+    <Host Name="Presentation"/>
   </Hosts>
   <DefaultSettings>
     <SourceLocation DefaultValue="https://localhost:3000/taskpane.html"/>
@@ -122,7 +123,6 @@
           </ExtensionPoint>
         </DesktopFormFactor>
       </Host>
-    </Hosts>
     <Host xsi:type="Presentation">
         <Runtimes>
           <Runtime resid="Taskpane.Url" lifetime="long" />
