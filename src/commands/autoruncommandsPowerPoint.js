@@ -12,7 +12,7 @@ Office.onReady(() => {
 async function insertImage(event) {
   try {
     await PowerPoint.run(function (context) {
-      Office.context.document.setSelectedDataAsync(
+      context.document.setSelectedDataAsync(
         getImageAsBase64String(),
         {
           coercionType: Office.CoercionType.XmlSvg,
