@@ -14,5 +14,13 @@ npm run build
 ```git
 npm start
 ```
-5. Right click the project folder and choose the properties, click the sharing in the ribon and share. Then you can follow the sideload steps to sideload the addin to your application.
- 
+5. Sideload your add-in following the guidance for [Word online](https://learn.microsoft.com/office/dev/add-ins/testing/sideload-office-add-ins-for-testing) or [Windows desktop](https://learn.microsoft.com/office/dev/add-ins/testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins).
+
+6. Create a new Word document or open an existing one, and you will see the headers are added to the document.
+
+> [!NOTE]
+> The feature is in preview for early testing. You can not deploy a add-in with this feature to your customer yet. Please also notice the preview version of feature may be different from the released version.
+> 
+> Supported clients and channels: Office Win32 Desktop DevMain channel insider ring, version>= 16.0.18324.20032 and Offilce online. Office MAC Desktop is not supported yet.
+> 
+> For more information on this feature, check [this documentation](https://github.com/OfficeDev/office-js-docs-pr/blob/WXP-event-based-activation/docs/develop/WXP-event-based-activation.md)
