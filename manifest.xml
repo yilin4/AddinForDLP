@@ -39,7 +39,7 @@
           <FunctionFile resid="Commands.Url"/>
           <ExtensionPoint xsi:type="LaunchEvent">
             <LaunchEvents>
-              <LaunchEvent Type="OnDocumentOpen" FunctionName="changeHeader"></LaunchEvent>
+              <LaunchEvent Type="OnDocumentOpened" FunctionName="changeHeader"></LaunchEvent>
             </LaunchEvents>
             <SourceLocation resid="WebViewRuntime.Url"/>
           </ExtensionPoint>
@@ -89,7 +89,7 @@
           <FunctionFile resid="Commands.Url"/>
           <ExtensionPoint xsi:type="LaunchEvent">
             <LaunchEvents>
-              <LaunchEvent Type="OnDocumentOpen" FunctionName="insertTable"></LaunchEvent>
+              <LaunchEvent Type="OnDocumentOpened" FunctionName="insertTable"></LaunchEvent>
             </LaunchEvents>
             <SourceLocation resid="WebViewRuntime.Url"/>
           </ExtensionPoint>
@@ -139,7 +139,7 @@
           <FunctionFile resid="Commands.Url"/>
           <ExtensionPoint xsi:type="LaunchEvent">
             <LaunchEvents>
-              <LaunchEvent Type="OnDocumentOpen" FunctionName="insertImage"></LaunchEvent>
+              <LaunchEvent Type="OnDocumentOpened" FunctionName="insertImage"></LaunchEvent>
             </LaunchEvents>
             <SourceLocation resid="WebViewRuntime.Url"/>
           </ExtensionPoint>
