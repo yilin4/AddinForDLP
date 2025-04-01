@@ -40,7 +40,7 @@ async function changeHeader(event) {
       await context.sync();
     }
 
-    //event.completed();
+    context.document.body.insertParagraph("event: " + JSON.stringify(event), "End");
   });
 
   // Calling event.completed is required. event.completed lets the platform know that processing has completed.
