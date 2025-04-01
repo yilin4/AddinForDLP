@@ -40,11 +40,11 @@ async function changeHeader(event) {
       await context.sync();
     }
 
-    event.completed();
+    //event.completed();
   });
 
   // Calling event.completed is required. event.completed lets the platform know that processing has completed.
-  //event.completed();
+  event.completed();
 }
 
 async function paragraphChanged() {
