@@ -39,10 +39,12 @@ async function changeHeader(event) {
       firstPageHeader.font.color = "#f8334d";
       await context.sync();
     }
+
+    event.completed();
   });
 
   // Calling event.completed is required. event.completed lets the platform know that processing has completed.
-  event.completed();
+  //event.completed();
 }
 
 async function paragraphChanged() {
