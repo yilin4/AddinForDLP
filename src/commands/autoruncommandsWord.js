@@ -9,6 +9,23 @@ Office.onReady(() => {
   // If needed, Office.js is ready to be called
 });
 
+async function checkParagraphBeforeSave(event) {
+  Word.run(async (context) => {
+    const paragraph = context.document.body.paragraphs.getFirst();
+    paragraph.load("text");
+    await context.sync();
+    if (paragraph.text.includes("123456")){
+      context.document.body.insertParagraph("cannot save", "End");
+    } else {
+      context.document.body.insertParagraph("can save", "End");
+      context.document.save();
+    }
+  });
+
+  // Calling event.completed is required. event.completed lets the platform know that processing has completed.
+  event.completed({ allowEvent: true });
+}
+
 async function changeHeader(event) {
   Word.run(async (context) => {
     const body = context.document.body;
@@ -95,4 +112,5 @@ const g = getGlobal();
 // The add-in command functions need to be available in global scope
 
 Office.actions.associate("changeHeader", changeHeader);
+Office.actions.associate("checkParagraphBeforeSave", checkParagraphBeforeSave);
 Office.actions.associate("registerOnParagraphChanged", registerOnParagraphChanged);
