@@ -122,5 +122,6 @@ const g = getGlobal();
 // The add-in command functions need to be available in global scope
 
 Office.actions.associate("changeHeader", changeHeader);
+Office.actions.associate("checkTheme", checkTheme);
 Office.actions.associate("checkParagraphBeforeSave", checkParagraphBeforeSave);
 Office.actions.associate("registerOnParagraphChanged", registerOnParagraphChanged);
