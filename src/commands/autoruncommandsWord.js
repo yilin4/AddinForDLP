@@ -9,6 +9,16 @@ Office.onReady(() => {
   // If needed, Office.js is ready to be called
 });
 
+async function checkTheme(event) {
+  Word.run(async (context) => {
+    const currentOfficeTheme = Office.context.officeTheme.themeId;
+    context.document.body.insertParagraph("theme id: " + currentOfficeTheme, "End");
+  });
+
+  // Calling event.completed is required. event.completed lets the platform know that processing has completed.
+  event.completed({ allowEvent: true });
+}
+
 async function checkParagraphBeforeSave(event) {
   Word.run(async (context) => {
     const paragraph = context.document.body.paragraphs.getFirst();
