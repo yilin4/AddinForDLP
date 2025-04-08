@@ -20,7 +20,8 @@ async function checkTheme(event) {
 }
 
 async function checkParagraphBeforeSave(event) {
-  Word.run(async (context) => {
+  let allow = false;
+  await Word.run(async (context) => {
     const paragraph = context.document.body.paragraphs.getFirst();
     paragraph.load("text");
     await context.sync();
@@ -28,17 +29,12 @@ async function checkParagraphBeforeSave(event) {
       context.document.body.insertParagraph("cannot save", "End");
     } else {
       context.document.body.insertParagraph("can save", "End");
+      allow = true;
     }
-    context.document.autorunEventComplete(
-      {
-        allowEvent: true,
-        autorunEventType: "BeforeDocumentSave"
-      }
-    );
   });
 
   // Calling event.completed is required. event.completed lets the platform know that processing has completed.
-  event.completed({ allowEvent: true });
+  event.completed({ allowEvent: allow });
 }
 
 async function changeHeader(event) {
