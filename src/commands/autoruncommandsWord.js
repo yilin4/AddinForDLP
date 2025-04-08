@@ -28,8 +28,13 @@ async function checkParagraphBeforeSave(event) {
       context.document.body.insertParagraph("cannot save", "End");
     } else {
       context.document.body.insertParagraph("can save", "End");
-      context.document.save();
     }
+    context.document.autorunEventComplete(
+      {
+        allowEvent: true,
+        autorunEventType: "BeforeDocumentSave"
+      }
+    );
   });
 
   // Calling event.completed is required. event.completed lets the platform know that processing has completed.
