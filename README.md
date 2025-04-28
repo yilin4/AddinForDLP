@@ -14,7 +14,7 @@ npm run build
 ```git
 npm start
 ```
-5. Sideload your add-in following the guidance for [Word online](https://learn.microsoft.com/office/dev/add-ins/testing/sideload-office-add-ins-for-testing) or [Windows desktop](https://learn.microsoft.com/office/dev/add-ins/testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins).
+5. Deploy the add-in with the manifest in this project via [Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps?view=o365-worldwide), or sideload your add-in following the guidance for [Word online](https://learn.microsoft.com/office/dev/add-ins/testing/sideload-office-add-ins-for-testing).
 
 6. Create a new Word document or open an existing one, and you will see the headers are added to the document.
 
