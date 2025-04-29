@@ -19,7 +19,7 @@ async function checkTheme(event) {
   event.completed({ allowEvent: true });
 }
 
-async function checkParagraphBeforeSave(event) {
+async function checkParagraphOnSave(event) {
   let allow = false;
   await Word.run(async (context) => {
     const paragraph = context.document.body.paragraphs.getFirst();
@@ -124,5 +124,5 @@ const g = getGlobal();
 
 Office.actions.associate("changeHeader", changeHeader);
 Office.actions.associate("checkTheme", checkTheme);
-Office.actions.associate("checkParagraphBeforeSave", checkParagraphBeforeSave);
+Office.actions.associate("checkParagraphOnSave", checkParagraphOnSave);
 Office.actions.associate("registerOnParagraphChanged", registerOnParagraphChanged);
