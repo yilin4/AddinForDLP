@@ -186,7 +186,7 @@
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
         <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html"/>
         <bt:Url id="JsRuntimeWord.Url" DefaultValue="https://raw.githubusercontent.com/yilin4/AddinForDLP/refs/heads/main/src/commands/autoruncommandsWord.js"/>
-        <bt:Url id="JsRuntimeExcel.Url" DefaultValue="https://raw.githubusercontent.com/yilin4/AddinForDLP/refs/heads/forDemo/src/commands/autoruncommandsExcel.js"/>
+        <bt:Url id="JsRuntimeExcel.Url" DefaultValue="https://raw.githubusercontent.com/yilin4/AddinForDLP/refs/heads/yilin4/test/src/commands/autoruncommandsWord.js"/>
         <bt:Url id="JsRuntimePowerPoint.Url" DefaultValue="https://raw.githubusercontent.com/yilin4/AddinForDLP/refs/heads/forDemo/src/commands/autoruncommandsPowerPoint.js"/>
       </bt:Urls>
       <bt:ShortStrings>
