@@ -78,6 +78,15 @@ async function registerOnParagraphChanged(event) {
   event.completed();
 }
 
+async function insertParagraph1(event) {
+   Word.run(async (context) => {
+    context.document.body.insertParagraph("From Addin 1", "End");
+    await context.sync();
+  });
+  // Calling event.completed is required. event.completed lets the platform know that processing has completed.
+  event.completed();
+}
+
 function getGlobal() {
   return typeof self !== "undefined"
     ? self
@@ -94,3 +103,4 @@ const g = getGlobal();
 
 Office.actions.associate("changeHeader", changeHeader);
 Office.actions.associate("registerOnParagraphChanged", registerOnParagraphChanged);
+Office.actions.associate("insertParagraph1", insertParagraph1);
