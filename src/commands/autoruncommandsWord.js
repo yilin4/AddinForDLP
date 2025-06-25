@@ -96,6 +96,33 @@ async function insertParagraph2(event) {
   event.completed();
 }
 
+async function insertParagraph3(event) {
+   Word.run(async (context) => {
+    context.document.body.insertParagraph("From Addin 3", "End");
+    await context.sync();
+  });
+  // Calling event.completed is required. event.completed lets the platform know that processing has completed.
+  event.completed();
+}
+
+async function insertParagraph4(event) {
+   Word.run(async (context) => {
+    context.document.body.insertParagraph("From Addin 4", "End");
+    await context.sync();
+  });
+  // Calling event.completed is required. event.completed lets the platform know that processing has completed.
+  event.completed();
+}
+
+async function insertParagraph5(event) {
+   Word.run(async (context) => {
+    context.document.body.insertParagraph("From Addin 5", "End");
+    await context.sync();
+  });
+  // Calling event.completed is required. event.completed lets the platform know that processing has completed.
+  event.completed();
+}
+
 function getGlobal() {
   return typeof self !== "undefined"
     ? self
@@ -114,3 +141,6 @@ Office.actions.associate("changeHeader", changeHeader);
 Office.actions.associate("registerOnParagraphChanged", registerOnParagraphChanged);
 Office.actions.associate("insertParagraph1", insertParagraph1);
 Office.actions.associate("insertParagraph2", insertParagraph2);
+Office.actions.associate("insertParagraph3", insertParagraph3);
+Office.actions.associate("insertParagraph4", insertParagraph4);
+Office.actions.associate("insertParagraph5", insertParagraph5);
