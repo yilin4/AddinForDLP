@@ -63,6 +63,18 @@ module.exports = async (env, options) => {
             to: "assets/[name][ext][query]",
           },
           {
+            from: "src/commands/autoruncommandsWord.js",
+            to: "[name][ext]",
+          },
+          {
+            from: "src/commands/autoruncommandsExcel.js",
+            to: "[name][ext]",
+          },
+          {
+            from: "src/commands/autoruncommandsPowerPoint.js",
+            to: "[name][ext]",
+          },
+          {
             from: "manifest*.xml",
             to: "[name]" + "[ext]",
             transform(content) {
