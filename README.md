@@ -23,4 +23,4 @@ npm start
 > 
 > Supported clients and channels: Office Win32 Desktop DevMain channel insider ring, version>= 16.0.18324.20032 and Offilce online. Office MAC Desktop is not supported yet.
 > 
-> For more information on this feature, check [this documentation]((https://learn.microsoft.com/en-us/office/dev/add-ins/develop/event-based-activation))
+> For more information on this feature, check [this documentation](https://learn.microsoft.com/en-us/office/dev/add-ins/develop/event-based-activation)
