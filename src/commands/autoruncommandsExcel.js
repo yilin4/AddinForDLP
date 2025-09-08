@@ -13,8 +13,10 @@ async function insertTable(event) {
   // Implement your custom code here. The following code is a simple Excel example.
   try {
     await Excel.run(async (context) => {
-      context.workbook.worksheets.getItemOrNullObject("Sheet1").delete();
-      const sheet = context.workbook.worksheets.add("Sheet1");
+      //context.workbook.worksheets.getItemOrNullObject("Sheet1").delete();
+      //const sheet = context.workbook.worksheets.add("Sheet1");
+    const wSheetName = 'Sheet1';
+    const sheet = context.workbook.worksheets.getItem(wSheetName);
 
       let expensesTable = sheet.tables.add("A1:E1", true);
       expensesTable.name = "SalesTable";
