@@ -41,7 +41,7 @@ async function insertTable(event) {
   }
 
   // Calling event.completed is required. event.completed lets the platform know that processing has completed.
-  event.completed({ allowEvent: true });
+  event.completed({ allowEvent: false });
 }
 
 function getGlobal() {
