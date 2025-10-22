@@ -36,7 +36,9 @@ async function checkParagraphOnSave(event) {
   } else {
     event.completed({
       allowEvent: allow,
-      errorMessage: "Do not include 123456!Do not include 123456!Do not include 123456!Do not include 123456!Do not include 123456!Do not include 123456!Do not include 123456!Do not include 123456!",
+      errorMessage: "Do not include 123456!Do not include 123456!Do not include 123456!Do not include 123456!Do not include 123456!Do not include 123456!Do not include 123456!Do not include 123456!\
+      Do not include 123456!Do not include 123456!Do not include 123456!Do not include 123456!Do not include 123456!Do not include 123456!Do not include 123456!Do not include 123456!\
+      Do not include 123456!Do not include 123456!Do not include 123456!Do not include 123456!Do not include 123456!Do not include 123456!Do not include 123456!Do not include 123456!",
     });
   }
 }
