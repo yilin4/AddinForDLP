@@ -20,21 +20,25 @@ async function checkTheme(event) {
 }
 
 async function checkParagraphOnSave(event) {
-  let allow = false;
+  let allow = true;
   await Word.run(async (context) => {
     const paragraph = context.document.body.paragraphs.getFirst();
     paragraph.load("text");
     await context.sync();
     if (paragraph.text.includes("123456")){
-      context.document.body.insertParagraph("cannot save", "End");
-    } else {
-      context.document.body.insertParagraph("can save", "End");
-      allow = true;
+      allow = false;
     }
   });
 
   // Calling event.completed is required. event.completed lets the platform know that processing has completed.
-  event.completed({ allowEvent: allow });
+  if (allow) {
+    event.completed({ allowEvent: allow });
+  } else {
+    event.completed({
+      allowEvent: allow,
+      errorMessage: "Do not include 123456!",
+    });
+  }
 }
 
 async function changeHeader(event) {
