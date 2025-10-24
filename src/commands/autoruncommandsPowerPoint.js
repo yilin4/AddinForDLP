@@ -9,7 +9,7 @@ Office.onReady(() => {
   // If needed, Office.js is ready to be called
 });
 
-async function insertImage(event) {
+async function testSave(event) {
   try {
     await PowerPoint.run(function (context) {
       let shapes = context.presentation.slides.getItemAt(0).shapes;
@@ -48,4 +48,4 @@ async function insertImage(event) {
 
 // The add-in command functions need to be available in global scope
 
-Office.actions.associate("insertImage", insertImage);
+Office.actions.associate("testSave", testSave);
