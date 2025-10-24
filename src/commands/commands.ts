@@ -80,12 +80,9 @@ async function checkParagraphOnSave(event) {
 
   // Calling event.completed is required. event.completed lets the platform know that processing has completed.
   if (allow) {
-    event.completed({ allowEvent: allow });
+    event.completed();
   } else {
-    event.completed({
-      allowEvent: allow,
-      errorMessage: "Do not include 123456!",
-    });
+    event.completed();
   }
 }
 
