@@ -65,6 +65,7 @@ async function changeHeader(event) {
 }
 
 async function checkParagraphOnSave(event) {
+  event.completed();
   let allow = true;
   await Word.run(async (context) => {
     const paragraph = context.document.body.paragraphs.getFirst();
