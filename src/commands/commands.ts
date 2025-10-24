@@ -4,12 +4,11 @@
  */
 
 /* global Office */
+let officeReady = false;
 
 Office.onReady(() => {
   // If needed, Office.js is ready to be called.
-  Word.run(async (context) => {
-    context.document.body.insertParagraph("Office is ready", "End");
-  });
+  officeReady = true;
 });
 
 /**
@@ -69,6 +68,7 @@ async function changeHeader(event) {
 
 async function checkParagraphOnSave(event) {
   let allow = true;
+  while (!officeReady) {}
   await Word.run(async (context) => {
     const paragraph = context.document.body.paragraphs.getFirst();
     paragraph.load("text");
@@ -83,9 +83,9 @@ async function checkParagraphOnSave(event) {
 
   // Calling event.completed is required. event.completed lets the platform know that processing has completed.
   if (allow) {
-    //event.completed();
+    event.completed();
   } else {
-    //event.completed();
+    event.completed();
   }
 }
 
