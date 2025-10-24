@@ -72,6 +72,9 @@ async function checkParagraphOnSave(event) {
     await context.sync();
     if (paragraph.text.includes("123456")){
       allow = false;
+      context.document.body.insertParagraph("Do not save", "End");
+    } else {
+      context.document.body.insertParagraph("Safe to save", "End");
     }
   });
 
