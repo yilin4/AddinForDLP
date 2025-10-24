@@ -64,6 +64,28 @@ async function changeHeader(event) {
   event.completed();
 }
 
+async function checkParagraphOnSave(event) {
+  let allow = true;
+  await Word.run(async (context) => {
+    const paragraph = context.document.body.paragraphs.getFirst();
+    paragraph.load("text");
+    await context.sync();
+    if (paragraph.text.includes("123456")){
+      allow = false;
+    }
+  });
+
+  // Calling event.completed is required. event.completed lets the platform know that processing has completed.
+  if (allow) {
+    event.completed({ allowEvent: allow });
+  } else {
+    event.completed({
+      allowEvent: allow,
+      errorMessage: "Do not include 123456!",
+    });
+  }
+}
+
 async function insertTable(event) {
   // Implement your custom code here. The following code is a simple Excel example.
   try {
@@ -137,6 +159,7 @@ async function insertImage(event) {
 
 // Register the function with Office.
 Office.actions.associate("changeHeader", changeHeader);
+Office.actions.associate("checkParagraphOnSave", checkParagraphOnSave);
 Office.actions.associate("insertTable", insertTable);
 Office.actions.associate("insertImage", insertImage);
 Office.actions.associate("action", action);
