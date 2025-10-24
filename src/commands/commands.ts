@@ -7,6 +7,9 @@
 
 Office.onReady(() => {
   // If needed, Office.js is ready to be called.
+  Word.run(async (context) => {
+    context.document.body.insertParagraph("Office is ready", "End");
+  });
 });
 
 /**
@@ -80,9 +83,9 @@ async function checkParagraphOnSave(event) {
 
   // Calling event.completed is required. event.completed lets the platform know that processing has completed.
   if (allow) {
-    event.completed();
+    //event.completed();
   } else {
-    event.completed();
+    //event.completed();
   }
 }
 
