@@ -41,8 +41,9 @@ async function insertImage(event) {
     //console.error(error);
   }
 
+  let allow = true;
   // Calling event.completed is required. event.completed lets the platform know that processing has completed.
-  event.completed();
+  event.completed({ allowEvent: allow });
 }
 
 // The add-in command functions need to be available in global scope
