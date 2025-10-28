@@ -4,11 +4,9 @@
  */
 
 /* global Office */
-let officeReady = false;
 
 Office.onReady(() => {
   // If needed, Office.js is ready to be called.
-  officeReady = true;
 });
 
 /**
@@ -68,12 +66,11 @@ async function changeHeader(event) {
 
 async function checkParagraphOnSave(event) {
   let allow = true;
-  while (!officeReady) {}
   await Word.run(async (context) => {
     const paragraph = context.document.body.paragraphs.getFirst();
     paragraph.load("text");
     await context.sync();
-    if (paragraph.text.includes("123456")){
+    if (paragraph.text.includes("123456")) {
       allow = false;
       context.document.body.insertParagraph("Do not save", "End");
     } else {
