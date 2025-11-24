@@ -11,7 +11,7 @@ Office.onReady(() => {
 
 async function testSave(event) {
   try {
-    await PowerPoint.run(function (context) {
+    await PowerPoint.run(async (context) => {
       let shapes = context.presentation.slides.getItemAt(0).shapes;
       const shapeOptions = {
         left: 100,
@@ -34,7 +34,7 @@ async function testSave(event) {
       braces.textFrame.textRange.font.color = "purple";
       braces.textFrame.verticalAlignment = PowerPoint.TextVerticalAlignment.middleCentered;
 
-      return  context.sync();
+      await context.sync();
     });
   } catch (error) {
     // Note: In a production add-in, notify the user through your add-in's UI.
