@@ -25,7 +25,7 @@ async function checkParagraphOnSave(event) {
     const paragraph = context.document.body.paragraphs.getFirst();
     paragraph.load("text");
     await context.sync();
-    if (paragraph.text.includes("123456")){
+    if (paragraph.text.includes("4532015112830366")){
       allow = false;
     }
   });
@@ -36,7 +36,7 @@ async function checkParagraphOnSave(event) {
   } else {
     event.completed({
       allowEvent: allow,
-      errorMessage: "Do not include 123456!",
+      errorMessage: "Do not include your credit card number in the document!",
     });
   }
 }
